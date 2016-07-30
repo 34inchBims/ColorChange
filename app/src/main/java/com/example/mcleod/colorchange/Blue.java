@@ -12,11 +12,16 @@ import android.view.MenuItem;
 
 
 public class Blue extends AppCompatActivity {
-    public void changeColor(View view){
-        Intent  someintent = new Intent(this,red.class);
-        startActivity(someintent);
+    public int num = 1;
+
+    public void changeColor (View view)
+    {   if (num % 2 != 0)
+        setContentView(R.layout.activity_red);
+        else setContentView(R.layout.activity_blue);
+        num = num +1;
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,15 +29,7 @@ public class Blue extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
+           }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
