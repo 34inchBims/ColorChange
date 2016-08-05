@@ -44,8 +44,24 @@ public int b = 0;
         setContentView(R.layout.activity_blue);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(savedInstanceState != null){
-                  }
+        if (savedInstanceState != null){
+                 b =  savedInstanceState.getInt("background");}
+        if ( b == 1 ){View somevariable = findViewById(R.id.laidout);
+            somevariable.setBackgroundColor(getResources().getColor(R.color.blue));
+        }
+        else if( b == 2) {
+            View somevariable = findViewById(R.id.laidout);
+            somevariable.setBackgroundColor(getResources().getColor(R.color.red));
+        }
+        else if ( b == 3 ){
+            View somevariable = findViewById(R.id.laidout);
+            somevariable.setBackgroundColor(getResources().getColor(R.color.green));
+        }
+        else if ( b == 4 ){
+            View somevariable = findViewById(R.id.laidout);
+            somevariable.setBackgroundColor(getResources().getColor(R.color.yellow));
+        }
+
 
            }
 
@@ -57,8 +73,8 @@ public int b = 0;
     }
     @Override
     public void onSaveInstanceState(Bundle outState){
-        outState.putInt("background", b);
         super.onSaveInstanceState(outState);
+        outState.putInt("background", b);
 
 
 
